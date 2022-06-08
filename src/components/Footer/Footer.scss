@@ -1,0 +1,27 @@
+.footer {
+    width: 100%;
+
+    position: absolute;
+    bottom:0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:1em auto;
+    font-size: 0.7em;
+    flex-direction: column;
+
+    p {
+        text-align: center;
+    }
+    
+    span {
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footer {
+        flex-direction: row;
+    }
+}

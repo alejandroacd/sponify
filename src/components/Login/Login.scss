@@ -1,0 +1,70 @@
+@import '../../variables.scss';
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    flex-direction: column;
+
+    h1 {
+        font-weight: bolder;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            margin: 1em;
+            border-radius: 12px;
+            height: 2em;
+            background-color: $thirdColor;
+            border: none;
+            width: 70%;
+            padding:1.5em;
+        }
+
+        button {
+            margin-top:1em;
+            background-color: $secondaryColor;
+            width: 60%;
+            padding: 1em;
+            border-radius: 12px;
+            border: none;
+            color: $primaryColor;
+            font-size: 0.9em;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .form-container {
+        position: relative;
+        top: 5em;
+        background-color: $backgroundsColor;
+        
+        height: 50vh;
+        margin: 0 auto;
+        opacity: 0.8;
+    }
+}
+
+
+
+@media only screen and (min-width: 992px){
+    .form-container {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .form-container {
+        width: 30%;
+    }
+}

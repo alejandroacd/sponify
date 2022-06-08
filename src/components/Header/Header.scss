@@ -1,0 +1,132 @@
+@import '../../_variables.scss';
+
+.header {
+    height: 14vh;
+    width: 80%;
+    margin: 0 auto;
+    color: $secondaryColor;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  
+    
+    h1 {
+        letter-spacing: 3px;
+        font-weight: bolder;
+        color:$secondaryColor;
+  
+      
+    }
+  
+}
+
+.hidden {
+
+    display: none
+}
+
+.active {
+   
+    display: flex;
+   
+ 
+
+}
+
+.navigation {
+    background-color: $backgroundsColor;
+    height: 100vh;
+    width: 60%;
+    position: absolute;
+    right: 0;
+    top:0;
+    transition: 1s;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index:1000;
+
+    .navigation__closeButton {
+        position: absolute;
+        top:2%;
+        right: 2%;
+        margin:2em;
+        font-weight: bold;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        height: 30%;
+       
+
+        
+    }
+    li {
+        
+        margin:1em;
+        font-weight: bold;
+        text-align: center;
+        list-style: none;
+    }
+}
+
+@media only screen and (min-width: 882px){
+    .header {
+        width: 65%;
+
+        .header__logotype {
+            letter-spacing: 4px;
+            font-size:3em;
+            font-weight: 900;
+        }
+        svg {
+            display: none;
+        }
+    }
+
+    .navigation {
+        height: 15vh;
+        background-color: $primaryColor;
+
+        ul {
+            flex-direction: row;
+        }
+
+        ul li {
+            position:relative;
+            font-size: 1.2em;
+            
+        }
+        
+        ul li::after {
+            
+            content: "";
+            position: absolute;
+            background: rgb(32,97,207);
+            background: linear-gradient(90deg, rgb(36, 37, 38) 19%, rgb(12, 15, 21) 54%);
+            height: 2px;
+            width: 0;
+            top:30px;
+            left:0;
+            transition: 0.5s;
+    
+    }
+       
+       ul li:hover::after{
+           width: 100%;
+       }
+
+        .navigation__closeButton {
+            display: none;
+        }
+    }
+
+
+   
+    .active, .hidden {
+        display: flex;
+    }
+
+}
+
