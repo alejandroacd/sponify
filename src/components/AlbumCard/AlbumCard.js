@@ -1,14 +1,22 @@
 import './AlbumCard.scss'
 import { BsFillSuitHeartFill } from 'react-icons/bs'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useFavoritesContext } from '../../FavoriteContext/favoritesContext'
+
 
 const AlbumCard = (props) => {
-
+    const { addOrRemoveFromFavorites,favorites } = useFavoritesContext()
+    const isInFavorites = favorites.find(x => x.title === props.title)
     const [pinned,setPinned] = useState(false);
 
-    const saveOrDeleteInStorage = () => {
-        console.log(props.title)
-    }
+    useEffect(() => {
+        if(isInFavorites){
+            setPinned(true)
+        }
+        if(!isInFavorites){
+            setPinned(false)
+        }
+    },[pinned, addOrRemoveFromFavorites])
 
 
     return (
@@ -19,7 +27,7 @@ const AlbumCard = (props) => {
 
            <div className='card__lastLine'>
             <p> Release: {props.releaseDate}   </p>
-            <BsFillSuitHeartFill onClick={saveOrDeleteInStorage} size={25} color={`grey`} />
+            <BsFillSuitHeartFill onClick={() => addOrRemoveFromFavorites(props)} size={25} color={pinned ? 'red' : 'grey'} />
            </div> 
 
        </div>

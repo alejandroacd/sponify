@@ -5,8 +5,10 @@ import Footer from './components/Footer/Footer'
 import Login from './components/Login/Login'
 import Dashboard from './components/Dashboard/Dashboard'
 import Redirection from './components/Redirection/Redirection'
+import  Favorites  from './components/Favorites/Favorites'
 import { BrowserRouter, Route, Routes  } from 'react-router-dom';
 import {ApiProvider} from './ApiContext/api'
+import { FavoritesProvider} from './FavoriteContext/favoritesContext'
 
 function App() {
 
@@ -15,7 +17,9 @@ function App() {
 
   <>
   
+
   <ApiProvider>
+  <FavoritesProvider>
   <BrowserRouter>
 
   <Header />
@@ -25,10 +29,11 @@ function App() {
     <Route exact path="/login" element={<Login />} />
     <Route exact path="/dashboard" element={<Dashboard />} />
     <Route exact path="/redirection" element={<Redirection />} />
+    <Route exact path="/favorites" element={<Favorites />} />
   </Routes>
 
   </BrowserRouter>
-
+  </FavoritesProvider>
   </ApiProvider>
   </>
   )
