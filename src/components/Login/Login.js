@@ -1,13 +1,12 @@
 import {useState, useRef, useEffect} from 'react'
 import '../Login/Login.scss'
-import { CLIENT_ID, REDIRECTION_URI, SPOTIFY_ENDPOINT } from '../../credentials'
 import { Navigate, Link } from 'react-router-dom'
 import { BsSpotify } from 'react-icons/bs'
 
 const Login = () => {
     
     const token = localStorage.getItem('token')
-    const finalEndpoint = `${SPOTIFY_ENDPOINT}response_type=token&client_id=${CLIENT_ID}&redirect_uri=${REDIRECTION_URI}`
+    const finalEndpoint = `${process.env.REACT_APP_SPOTIFY_ENDPOINT}response_type=token&client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECTION_URI}`
 
 
     return (

@@ -12,6 +12,7 @@ import SwiperCore, {
     Navigation,
     Autoplay
   } from "swiper/core";
+  import { Navigate } from 'react-router-dom'
   
   SwiperCore.use([EffectCoverflow, Pagination, Navigation, Autoplay]);
 
@@ -27,6 +28,8 @@ const Favorites = () => {
 
     return (
         <>
+        
+      {favorites.length === 0 && <Navigate to="/" />}
         <div className="favorites">
         <h1> Saved albums </h1>
 
