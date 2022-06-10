@@ -1,14 +1,8 @@
 .loading {
+    display: flex;
     height: 70vh;
     font-weight: bold;
-    align-content: center;
+    align-items: center;
     width: 80%;
     margin: 0 auto;
-
-    h1 {
-     position: relative;
-     top: 3em;
-        text-align: center;
-    }
-
 }

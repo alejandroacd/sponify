@@ -12,7 +12,7 @@ const Login = () => {
 
     return (
 
-        <>
+        <div className='login'>
         {token && <Navigate to="/Dashboard"/>}
        
         <div className='form-container'>
@@ -23,7 +23,14 @@ const Login = () => {
                 </a>
         
         </div>
-        </>
+
+        <div className='footer'>
+            <p>Created by <br/>
+            <span>Alejandro Contreras</span> </p>
+
+            <p>2022</p>
+        </div>
+        </div>
     )
 
 }

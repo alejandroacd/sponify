@@ -17,9 +17,17 @@ const Redirection = () => {
 
     return (
         <>
-        <div className='loading'> 
-        <h1>Redireccionando...</h1>
-        </div>
+      
+      <div className='loading'>
+        <div class="load-3">
+         
+        
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>    
+      </div>
+      </div>
+      
         </>
     )
 }

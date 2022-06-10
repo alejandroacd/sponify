@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-
-
+    animation-name: fadeIn;
+    animation-duration:1s;
   
     form {
         display: flex;
@@ -38,17 +38,25 @@
             height: 45px;
             border-radius: 12px;
             background-color: $secondaryColor;
+            font-weight: bold;
         }
     }
 
 
     .results {
-
+        display: flex;
+        flex-direction: column;
+        
         .results__none {
+            
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 55vh;
+            margin:0 auto;
+
+       
             h1 {
                 font-size:3em;
                 text-align: center;
@@ -102,8 +110,8 @@
             display: flex;
             flex-wrap: wrap;
             margin:0 auto;
-            margin-top:5em;
-            justify-content: space-evenly;
+            margin-top:3em;
+            justify-content: space-between;
             flex-direction: row;
             h1 {
                 width: 70%;

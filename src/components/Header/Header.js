@@ -3,12 +3,13 @@ import './Header.scss'
 import { RiMenuFill } from 'react-icons/ri'
 import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
+import { BsFillSuitHeartFill } from 'react-icons/bs'
+import { useFavoritesContext  } from '../../FavoriteContext/favoritesContext'
 
 const Header = () => {
-
-
+    
+    const { favorites } = useFavoritesContext()
     const [token, setToken] = useState(false)
-
     const [isActive, setActive] = useState(false)
 
     const logout = () => {
@@ -42,7 +43,7 @@ const Header = () => {
     return (
         <>
             <header className='header' style={{justifyContent: token ? 'space-between' : 'center' }}>
-                <h1 className='header__logotype'> Spotnify </h1>
+                <h1 className='header__logotype'> sponify </h1>
                 <RiMenuFill size={25} onClick={activateMenu} style={{display: token ? 'block' : 'none' }} />
             </header>
 
@@ -50,7 +51,7 @@ const Header = () => {
                 <GrClose size={20} className='navigation__closeButton' onClick={activateMenu} />
                 <ul>
                     <Link onClick={activateMenu} to="/dashboard"> <li> dashboard</li> </Link>
-                    <Link onClick={activateMenu} to="/favorites"> <li> favorites</li> </Link>
+                    <Link onClick={activateMenu} to="/favorites"> <li> favorites  </li> </Link>
                     <Link  to="/" onClick={logout}> <li> log out </li></Link>
                 </ul>
             </nav>

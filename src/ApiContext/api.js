@@ -12,8 +12,11 @@ export const useApi = () => {
 export const ApiProvider = ({ children }) => {
     
     const [data, setData] = useState([])
-    const getData = (query) => {
+    const [loading,setLoading] = useState()
 
+
+    const getData = (query) => {
+        setLoading(true)
         const config = {
             method: 'get',
             url: `https://api.spotify.com/v1/search?q=${query}&type=album&market=ES&offset=5`,
@@ -26,16 +29,21 @@ export const ApiProvider = ({ children }) => {
         axios(config)
         .then(response => {
             setData(response.data.albums.items)
+            setLoading(false)
            
         })
-        .catch(e => console.log(e.message))
+        .catch(e => {
+            console.log(e)
+            setLoading(false)
+        })
     }
 
 
     const value = {
         data,
         setData,
-        getData
+        getData,
+        loading
     }
 
     return (

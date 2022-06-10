@@ -21,7 +21,7 @@ const AlbumCard = (props) => {
 
     return (
        <div className='card'>
-           <img src={props.image} />
+           <img src={props.image} loading="lazy"/>
            <h1> {props.title.substring(0,20)}... </h1>
            <p className='card__artistName' > {props.artist} </p>
 
