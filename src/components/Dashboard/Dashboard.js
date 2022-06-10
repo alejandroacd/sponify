@@ -28,7 +28,7 @@ const Dashboard = () => {
                 <div className='dashboard'>
 
                     <form className='search-form'>
-                        <input type="text" onChange={handleChange} placeholder='Search some album! :)' />
+                        <input type="text" onChange={handleChange} placeholder='Search some album! :)' autoFocus />
                         <button type='button' onClick={() => getData(search)}> Search </button>
                     </form>
 

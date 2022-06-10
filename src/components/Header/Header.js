@@ -49,9 +49,9 @@ const Header = () => {
             {token &&  <nav className={isActive ? 'navigation active' : 'navigation hidden'} >
                 <GrClose size={20} className='navigation__closeButton' onClick={activateMenu} />
                 <ul>
-                    <Link to="/dashboard"> <li> dashboard</li> </Link>
-                    <Link to="/favorites"> <li> favorites</li> </Link>
-                    <Link to="/" onClick={logout}> <li> log out </li></Link>
+                    <Link onClick={activateMenu} to="/dashboard"> <li> dashboard</li> </Link>
+                    <Link onClick={activateMenu} to="/favorites"> <li> favorites</li> </Link>
+                    <Link  to="/" onClick={logout}> <li> log out </li></Link>
                 </ul>
             </nav>
             }

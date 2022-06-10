@@ -20,5 +20,11 @@ html {
 }
 
 
-
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+  
+} 
+.swiper-button-next::after, .swiper-button-prev::after{
+  color:$primaryColor;
+}
 

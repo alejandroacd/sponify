@@ -16,7 +16,8 @@ export const FavoritesProvider = ({children}) => {
         const newObj = {
             title: item.title,
             image: item.image,
-            artist: item.artist
+            artist: item.artist,
+            releaseDate: item.releaseDate
         }
 
         const exist = favorites.find(x => x.title === newObj.title);

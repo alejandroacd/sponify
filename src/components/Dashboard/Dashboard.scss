@@ -19,13 +19,17 @@
         margin-bottom: 2em;
 
         input {
-            padding:0.5em;
+            padding:1em;
             width: 60%;
             border-color: $thirdColor;
             border-style: solid;
             border-radius: 12px;
             height: 45px;
             background-color: $backgroundsColor
+        }
+
+        input::placeholder {
+            font-weight: bold;
         }
         button {
             color:$primaryColor;
