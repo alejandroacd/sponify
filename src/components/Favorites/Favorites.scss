@@ -59,6 +59,13 @@
             background-position: center;
             background-size: cover;
             
+            button {
+                position:relative;
+                left:80%;
+                padding:0.5em;
+                border:1px solid red;
+                color:red;
+            }
          
 
             @media only screen and (max-width: 414px){

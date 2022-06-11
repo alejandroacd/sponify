@@ -3,25 +3,25 @@ import './Header.scss'
 import { RiMenuFill } from 'react-icons/ri'
 import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
-import { BsFillSuitHeartFill } from 'react-icons/bs'
 import { useFavoritesContext  } from '../../FavoriteContext/favoritesContext'
 
 const Header = () => {
     
-    const { favorites } = useFavoritesContext()
+   
     const [token, setToken] = useState(false)
     const [isActive, setActive] = useState(false)
+    let code = localStorage.getItem('token')
+
 
     const logout = () => {
 
        localStorage.clear()
-       window.location = "/dashboard"
+       window.location = "/"
 
     }
 
     useEffect(() => {
         
-        let code = localStorage.getItem('token')
         console.log(code)
         if(!code){
             setToken('')

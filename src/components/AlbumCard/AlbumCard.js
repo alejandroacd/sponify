@@ -16,12 +16,12 @@ const AlbumCard = (props) => {
         if(!isInFavorites){
             setPinned(false)
         }
-    },[pinned, addOrRemoveFromFavorites])
+    },[pinned, addOrRemoveFromFavorites,isInFavorites])
 
 
     return (
        <div className='card'>
-           <img src={props.image} loading="lazy"/>
+           <img src={props.image} loading="lazy" alt=""/>
            <h1> {props.title.substring(0,20)}... </h1>
            <p className='card__artistName' > {props.artist} </p>
 

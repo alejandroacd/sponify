@@ -3,10 +3,11 @@ import { Navigate } from 'react-router-dom'
 import AlbumCard from '../AlbumCard/AlbumCard'
 import './Dashboard.scss'
 import { useApi } from '../../ApiContext/api'
-
+import { useFavoritesContext  } from '../../FavoriteContext/favoritesContext'
 const Dashboard = () => {
 
-    const { getData, data, loading } = useApi()
+    const { getData, data } = useApi()
+    const {favorites} = useFavoritesContext()
     const token = localStorage.getItem('token')
     const [search, setSearch] = useState();
 
@@ -16,7 +17,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         console.log(data)
-    }, [data])
+    }, [data,favorites])
 
     return (
         <>

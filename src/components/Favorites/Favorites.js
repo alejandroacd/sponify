@@ -17,14 +17,11 @@ import SwiperCore, {
   SwiperCore.use([EffectCoverflow, Pagination, Navigation, Autoplay]);
 
 const Favorites = () => {
-    const { favorites, addOrRemoveFromStorage } = useFavoritesContext()
+    const { favorites } = useFavoritesContext()
 
 
 
 
-    useEffect(() => {
-        console.log(favorites)
-    },[])
 
     return (
         <>
@@ -35,7 +32,7 @@ const Favorites = () => {
 
 
         <Swiper
-
+        
         grabCursor={true}
         navigation={true}
         effect={"coverflow"}
@@ -61,7 +58,7 @@ const Favorites = () => {
           {favorites.map((x,y) => {
               return(   
                 <>
-                  <SwiperSlide className="swip_slide" key={y}>
+                  <SwiperSlide className="swip_slide" key={y + 1}>
                   <img src={x.image} /> 
 
                   <div className="mySwiper__info">

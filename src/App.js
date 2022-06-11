@@ -1,8 +1,7 @@
 import './App.scss';
 import '../src/_variables.scss'
 import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import Login from './components/Login/Login'
+  import Login from './components/Login/Login'
 import Dashboard from './components/Dashboard/Dashboard'
 import Redirection from './components/Redirection/Redirection'
 import  Favorites  from './components/Favorites/Favorites'

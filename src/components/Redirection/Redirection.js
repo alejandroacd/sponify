@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import './Redirection.scss'
-import { Navigate } from 'react-router-dom'
+
 
 const Redirection = () => {
 
