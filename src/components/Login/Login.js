@@ -15,7 +15,7 @@ const Login = () => {
     return (
 
         <div className='login'>
-        {token && <Navigate to="/Dashboard"/>}
+        {token && <Navigate to="/dashboard"/>}
        
         <div className='form-container'>
             <h1>Search artists albums in Spotify. Just connect it!</h1>
