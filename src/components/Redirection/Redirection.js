@@ -4,35 +4,36 @@ import './Redirection.scss'
 
 const Redirection = () => {
 
-    useEffect(() => {
+  useEffect(() => {
 
-        // después hacer que esto sea guarde en localStorage y redireccione a Dashboard 
-        const code = window.location.hash.split("#")[1].split('=')[1]
-        localStorage.setItem('token', code)
+    // después hacer que esto sea guarde en localStorage y redireccione a Dashboard 
 
-        setTimeout(() => {
-            window.location = 'https://sponify-app.netlify.app/dashboard'
-        }, 1500)
-    }, [])
+    const code = window.location.hash.split("#")[1].split('=')[1]
+    localStorage.setItem('token', code)
 
-    return (
-        <>
+    setTimeout(() => {
+      window.location = 'dashboard'
+    }, 2000)
 
+  }, [])
 
 
-      
+
+  return (
+    <>
+ 
       <div className='loading'>
         <div class="load-3">
-         
-        
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>    
+
+
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
       </div>
-      </div>
-      
-        </>
-    )
+
+    </>
+  )
 }
 
 export default Redirection
