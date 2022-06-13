@@ -1,4 +1,4 @@
-##Sponify 🎵
+## Sponify 🎵
 
 Installation 🔨
 In the project directory, run 'npm start', then the browser will open 'localhost:3000'. 
