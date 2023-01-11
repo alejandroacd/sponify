@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 import AlbumCard from '../AlbumCard/AlbumCard'
 import './Dashboard.scss'
 import { useApi } from '../../ApiContext/api'
-import { useFavoritesContext  } from '../../FavoriteContext/favoritesContext'
+import { useFavoritesContext } from '../../FavoriteContext/favoritesContext'
 
 
 
@@ -52,7 +52,6 @@ const Dashboard = () => {
                                 {data.map((x, y) => {
                                     return (
                                         <div key={y}>
-
                                             <AlbumCard title={x.name} image={x.images[0].url} artist={x.artists[0].name} releaseDate={x.release_date} />
                                         </div>
                                     )

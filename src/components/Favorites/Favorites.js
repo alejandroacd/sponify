@@ -1,4 +1,4 @@
-import { useFavoritesContext  } from "../../FavoriteContext/favoritesContext"
+import { useFavoritesContext } from "../../FavoriteContext/favoritesContext"
 import './Favorites.scss'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BiBlock } from 'react-icons/bi'
@@ -16,7 +16,7 @@ import SwiperCore, {
   SwiperCore.use([EffectCoverflow, Pagination, Navigation, Autoplay]);
 
 const Favorites = () => {
-    const { favorites } = useFavoritesContext()
+    const { addOrRemoveFromFavorites, favorites } = useFavoritesContext()
 
     return (
         <>
@@ -72,7 +72,7 @@ const Favorites = () => {
                   <h2> {x.title.substring(0,20)}... </h2>
                   <p> {x.artist.substring(0,50)}...</p>
                   <p> {x.releaseDate } </p>
-                  <BiBlock size={30} />
+                  <BiBlock onClick={() =>addOrRemoveFromFavorites(x)} size={30} />
                   </div>
                   
 
