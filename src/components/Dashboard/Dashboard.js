@@ -4,6 +4,9 @@ import AlbumCard from '../AlbumCard/AlbumCard'
 import './Dashboard.scss'
 import { useApi } from '../../ApiContext/api'
 import { useFavoritesContext  } from '../../FavoriteContext/favoritesContext'
+
+
+
 const Dashboard = () => {
 
     const { getData, data } = useApi()
@@ -11,12 +14,13 @@ const Dashboard = () => {
     const token = localStorage.getItem('token')
     const [search, setSearch] = useState();
 
+
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
 
     useEffect(() => {
-        console.log(data)
+        console.log('Favoritos:' + JSON.stringify(favorites))
     }, [data,favorites])
 
     return (
@@ -40,9 +44,11 @@ const Dashboard = () => {
 
                                 <h1> Search music albums and add your likes to Favorites! </h1>
                             </div>}
-                        {data.length > 0 &&
+                       
+                         {data.length > 0 &&
                             <>
 
+                            <h1>Results from: "{search}"  </h1>
                                 {data.map((x, y) => {
                                     return (
                                         <div key={y}>
@@ -51,7 +57,7 @@ const Dashboard = () => {
                                         </div>
                                     )
                                 })}
-                            </>
+                            </> 
                         }
 
 
