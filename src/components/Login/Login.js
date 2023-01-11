@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 const Login = () => {
     
     const token = localStorage.getItem('token')
-    const finalEndpoint = `${process.env.REACT_APP_SPOTIFY_ENDPOINT}response_type=token&client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECTION_URI}`
+    const finalEndpoint = `${process.env.REACT_APP_SPOTIFY_ENDPOINT}response_type=token&client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=http://localhost:3000/redirection`
 
     useEffect(() => {
         console.log(finalEndpoint)
