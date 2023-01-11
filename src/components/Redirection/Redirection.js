@@ -12,7 +12,7 @@ const Redirection = () => {
     localStorage.setItem('token', code)
 
     setTimeout(() => {
-      window.location = 'dashboard'
+      window.location = '/dashboard'
     }, 2000)
 
   }, [])
