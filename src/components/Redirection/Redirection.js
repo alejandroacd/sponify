@@ -1,8 +1,14 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Redirection.scss'
 
 
+
+  
+
 const Redirection = () => {
+
+  const nav = useNavigate();
 
   useEffect(() => {
 
@@ -11,24 +17,22 @@ const Redirection = () => {
     const code = window.location.hash.split("#")[1].split('=')[1]
     localStorage.setItem('token', code)
 
-    setTimeout(() => {
-      window.location = '/dashboard'
-    }, 2000)
-
+    setTimeout(() => nav('/dashboard'),3000)
   }, [])
 
-
-
+  
   return (
+
     <>
- 
+
+
       <div className='loading'>
-        <div class="load-3">
+        <div className="load-3">
 
 
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
       </div>
 

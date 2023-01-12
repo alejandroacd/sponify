@@ -27,7 +27,7 @@ function App() {
     <Route exact path="/" element={<Dashboard />} />
     <Route exact path="/login" element={<Login />} />
     <Route exact path="/dashboard" element={<Dashboard />} />
-    <Route exact path="/redirection" element={<Redirection />} />
+    <Route exact path="/redirection/:token" element={<Redirection />} />
     <Route exact path="/favorites" element={<Favorites />} />
   </Routes>
 
