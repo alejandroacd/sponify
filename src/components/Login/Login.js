@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 const Login = () => {
     
     const token = localStorage.getItem('token')
-    const finalEndpoint = `${process.env.REACT_APP_SPOTIFY_ENDPOINT}response_type=token&client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=https://sponify.netlify.app/redirection`
+    const finalEndpoint = `${process.env.REACT_APP_SPOTIFY_ENDPOINT}response_type=token&client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=https://sponify.netlify.app/redirection/`
 
     useEffect(() => {
         console.log(finalEndpoint)
