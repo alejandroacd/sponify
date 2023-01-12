@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './Redirection.scss'
 
 
@@ -8,7 +7,6 @@ import './Redirection.scss'
 
 const Redirection = () => {
 
-  const nav = useNavigate();
 
   useEffect(() => {
 
