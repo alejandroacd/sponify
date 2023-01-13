@@ -15,7 +15,7 @@ const Redirection = () => {
     const code = window.location.hash.split("#")[1].split('=')[1]
     localStorage.setItem('token', code)
 
-    setTimeout(() => window.location = "/redirection/",3000)
+    setTimeout(() => window.location = "/",3000)
   }, [])
 
   
