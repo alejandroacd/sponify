@@ -6,7 +6,7 @@ import { useFavoritesContext } from '../../FavoriteContext/favoritesContext'
 
 const AlbumCard = (props) => {
     const { addOrRemoveFromFavorites,favorites } = useFavoritesContext()
-    const isInFavorites = favorites.find(x => x.title === props.title)
+    const isInFavorites = favorites.find(x => x.image === props.image)
     const [pinned,setPinned] = useState(false);
 
     useEffect(() => {
