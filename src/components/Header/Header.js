@@ -2,26 +2,32 @@ import { useEffect, useState } from 'react'
 import './Header.scss'
 import { RiMenuFill } from 'react-icons/ri'
 import { GrClose } from 'react-icons/gr'
-import { Link } from 'react-router-dom'
-import { BsFillSuitHeartFill } from 'react-icons/bs'
-import { useFavoritesContext  } from '../../FavoriteContext/favoritesContext'
+import { Link, useNavigate} from 'react-router-dom'
 
 const Header = () => {
     
-    const { favorites } = useFavoritesContext()
+   
     const [token, setToken] = useState(false)
     const [isActive, setActive] = useState(false)
+    let code = localStorage.getItem('token')
+    const nav = useNavigate()
 
+
+    const redirectHome = () => {
+        nav('/login ')
+    }
     const logout = () => {
 
        localStorage.clear()
-       window.location = "/dashboard"
+       window.location = "/"
 
     }
 
+
+
     useEffect(() => {
-        
-        let code = localStorage.getItem('token')
+        console.log(process.env.REACT_APP_CLIENT_ID)
+
         console.log(code)
         if(!code){
             setToken('')
@@ -43,7 +49,7 @@ const Header = () => {
     return (
         <>
             <header className='header' style={{justifyContent: token ? 'space-between' : 'center' }}>
-                <h1 className='header__logotype'> sponify </h1>
+                <h1 className='header__logotype' onClick={() => redirectHome()}> sponify </h1>
                 <RiMenuFill size={25} onClick={activateMenu} style={{display: token ? 'block' : 'none' }} />
             </header>
 

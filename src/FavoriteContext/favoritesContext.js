@@ -23,17 +23,18 @@ export const FavoritesProvider = ({children}) => {
         const exist = favorites.find(x => x.title === newObj.title);
 
         if(exist){
-            const newArray = favorites.filter(x => x.item !== newObj.item);
+            const newArray = favorites.filter(x => x.title !== newObj.title);
+            console.log(newArray)
             setFavorites(newArray)
             localStorage.setItem('favorites', JSON.stringify(newArray))
-            console.log('Album has been eliminated from Favorites')
+            console.log('Album has been eliminated from Favorites' + newArray )
         }
 
         if(!exist) {
             const arrayTicket = [...favorites,newObj]
             setFavorites(arrayTicket)
             localStorage.setItem('favorites', JSON.stringify(arrayTicket))
-            console.log('Album has been included in Favorites')
+            console.log('Album has been included in Favorites ' + arrayTicket)
         }
 
 

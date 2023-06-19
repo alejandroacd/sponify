@@ -1,19 +1,23 @@
-import {useState, useRef, useEffect} from 'react'
+import React from 'react'
 import '../Login/Login.scss'
-import { CLIENT_ID, REDIRECTION_URI, SPOTIFY_ENDPOINT } from '../../credentials'
-import { Navigate, Link } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { BsSpotify } from 'react-icons/bs'
+import { useEffect } from 'react'
+
+
 
 const Login = () => {
     
     const token = localStorage.getItem('token')
-    const finalEndpoint = `${SPOTIFY_ENDPOINT}response_type=token&client_id=${CLIENT_ID}&redirect_uri=${REDIRECTION_URI}`
+    const finalEndpoint = `${process.env.REACT_APP_SPOTIFY_ENDPOINT}response_type=token&client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=https://sponify.netlify.app/redirection/`
 
-
+    useEffect(() => {
+        console.log(finalEndpoint)
+    },[])
     return (
 
         <div className='login'>
-        {token && <Navigate to="/Dashboard"/>}
+        {token && <Navigate to="/dashboard"/>}
        
         <div className='form-container'>
             <h1>Search artists albums in Spotify. Just connect it!</h1>
@@ -24,12 +28,7 @@ const Login = () => {
         
         </div>
 
-        <div className='footer'>
-            <p>Created by <br/>
-            <span>Alejandro Contreras</span> </p>
 
-            <p>2022</p>
-        </div>
         </div>
     )
 

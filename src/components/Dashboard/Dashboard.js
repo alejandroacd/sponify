@@ -3,20 +3,25 @@ import { Navigate } from 'react-router-dom'
 import AlbumCard from '../AlbumCard/AlbumCard'
 import './Dashboard.scss'
 import { useApi } from '../../ApiContext/api'
+import { useFavoritesContext } from '../../FavoriteContext/favoritesContext'
+
+
 
 const Dashboard = () => {
 
-    const { getData, data, loading } = useApi()
+    const { getData, data } = useApi()
+    const {favorites} = useFavoritesContext()
     const token = localStorage.getItem('token')
     const [search, setSearch] = useState();
+
 
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
 
     useEffect(() => {
-        console.log(data)
-    }, [data])
+        console.log('Favoritos:' + JSON.stringify(favorites))
+    }, [data,favorites])
 
     return (
         <>
@@ -39,18 +44,19 @@ const Dashboard = () => {
 
                                 <h1> Search music albums and add your likes to Favorites! </h1>
                             </div>}
-                        {data.length > 0 &&
+                       
+                         {data.length > 0 &&
                             <>
 
+                            <h1>Results from: "{search}"  </h1>
                                 {data.map((x, y) => {
                                     return (
                                         <div key={y}>
-
                                             <AlbumCard title={x.name} image={x.images[0].url} artist={x.artists[0].name} releaseDate={x.release_date} />
                                         </div>
                                     )
                                 })}
-                            </>
+                            </> 
                         }
 
 
